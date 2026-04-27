@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dema Portfolio</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="demo.css">
+    
+    <style>
+        /* 1. إعدادات الصفحة الأساسية */
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcfcfc;
+            line-height: 1.6;
+        }
+
+        /* 2. حاوية التعريف (فوق) */
+        .hero-container {
+            display: flex;
+            flex-wrap: wrap; /* يسمح بالترتيب في الجوال */
+            justify-content: center;
+            align-items: center;
+            padding: 80px 10%;
+            gap: 50px;
+            background: white;
+            min-height: 90vh; /* تأخذ معظم الشاشة */
+        }
+
+        .text-section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .text-section h1 {
+            font-family: 'Amiri', serif;
+            font-size: 3.5rem;
+            color: #2a1b3d;
+            margin: 0;
+        }
+
+        .contact-btn {
+            margin-top: 25px;
+            padding: 12px 35px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 3. تنسيق الصورة الشخصية */
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-wrapper {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 10px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            animation: elegant-float 4s ease-in-out infinite;
+        }
+
+        @keyframes elegant-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 4. قسم المشاريع (تحت بانتظام) */
+        .projects-section {
+            padding: 100px 10%;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2a1b3d;
+        }
+
+        .project-card {
+            background: white;
+            display: flex;
+            margin-bottom: 40px; /* مسافة بين المشاريع */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project-img {
+            width: 300px;
+            min-width: 300px;
+            background-color: #e9ecef;
+        }
+
+        .project-info {
+            padding: 40px;
+        }
+
+        .project-info h3 { margin-top: 0; color: #6a11cb; }
+
+        /* تعديلات للجوال */
+        @media (max-width: 768px) {
+            .hero-container { flex-direction: column-reverse; text-align: center; }
+            .project-card { flex-direction: column; }
+            .project-img { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+      
+    <!-- 1. القسم العلوي (الصورة والكلام) -->
+<div class="hero-container">
+    <!-- جهة النص -->
+    <div class="text-section">
+        <h1>Dema Mahmoud Salem</h1>
+        <h3 class="typing-text">Mobile Computing & Smart Device Applications</h3>
+         <p style="font-style: italic; color: #555; line-height: 1.6;">
+           I am a 3rd-year Mobile Computing student at <strong>The Islamic University of Gaza (IUG)</strong>. 
+           I am developing my technical expertise within IUG's prestigious environment, known for its academic excellence and innovation in technology.
+         </p>
+        <button class="contact-btn">Get In Touch</button>
+    </div>
+
+    <!-- جهة الصورة الشخصية -->
+    <div class="image-side">
+        <div class="img-circle">
+            <img src="https://media.gettyimages.com/id/1055843960/photo/portrait-of-confident-high-school-female-student-with-books-in-classroom.jpg?s=612x612&w=0&k=20&c=1_RFZNTdRGVHr-eRwiHXVSO32PDmF7HoHS6_0lJvVdU=" alt="Dema">
+        </div>
+    </div>
+</div> <!-- تأكدي من إغلاق الـ hero-container هنا -->
+
+<!-- 2. قسم المشاريع (يجب أن يكون خارج ومستقل تماماً) -->
+<section class="projects-area">
+    <h2>My Projects</h2>
+    
+    <div class="projects-container">
+       <div class="card reveal">
+    <div class="card-img">
+        <!-- أضفت لكِ أيقونة تعبيرية لتمثيل التطبيق حتى تضعي صورتك -->
+        <div class="project-icon">📱</div> 
+    </div>
+    <div class="card-info">
+        <h3>Smart Home App</h3>
+        <p>A smart solution to control your home lightings and security via mobile.</p>
+        
+        <!-- إضافة لغات البرمجة المستخدمة (بلمسة زهرية) -->
+        <div class="project-tags">
+            <span>Flutter</span>
+            <span>Firebase</span>
+        </div>
+        
+        <a href="#" class="view-link">View Project →</a>
+      </div>
+       </div>
+      </div>
+</section>
+<section class="skills-section">
+    <h2>My Technical Skills</h2>
+    <div class="skills-container">
+        <!-- مهارة 1 -->
+        <div class="skill-item">
+            <span>Flutter & Dart</span>
+            <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+        </div>
+        <!-- مهارة 2 -->
+        <div class="skill-item">
+            <span>UI/UX Design (Figma)</span>
+            <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+        </div>
+        <!-- مهارة 3 -->
+        <div class="skill-item reveal">
+            <span>Java & Kotlin</span>
+            <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+        </div>
+    </div>
+</section>
+<footer class="footer-area reveal">
+    <h3>Let's Build Something Together</h3>
+    <div class="social-links">
+        <!-- رابط لينكد إن -->
+        <a href="#" class="social-icon">LinkedIn</a>
+        <!-- رابط جيت هاب -->
+        <a href="#" class="social-icon">GitHub</a>
+        <!-- رابط واتساب -->
+        <a href="#" class="social-icon">WhatsApp</a>
+    </div>
+    <p>© 2024 Dema Mahmoud. All Rights Reserved.</p>
+</footer>
+   
+   <button id="backToTop" title="Go to top">↑</button>
+   <script>
+    // الحصول على الزر
+    let mybutton = document.getElementById("backToTop");
+
+    // عندما ينزل المستخدم 200 بكسل لأسفل، يظهر الزر
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // عند الضغط على الزر، يصعد للأعلى بنعومة
+    mybutton.onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+     window.addEventListener('scroll', reveal);
+
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var revealTop = reveals[i].getBoundingClientRect().top;
+        var revealPoint = 150; // المسافة اللي بيبدأ عندها التأثير
+
+        if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add('active');
+        }
+    }
+}
+</script>
+  
+   
+    
+
+</body>
+</html>
